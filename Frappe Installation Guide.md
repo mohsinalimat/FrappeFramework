@@ -98,7 +98,7 @@ Edit MYSQL default config file
 sudo nano /etc/mysql/my.cnf
 
 Add the following block of code exactly as is:
-
+```
 [mysqld]
 character-set-client-handshake = FALSE
 character-set-server = utf8mb4
@@ -106,58 +106,57 @@ collation-server = utf8mb4_unicode_ci
 
 [mysql]
 default-character-set = utf8mb4
-
+```
 Restart the MYSQL Server
-
+```
 sudo service mysql restart
-
+```
 Instal CURL, Node, NPM and Yarn
 Install CURL
-
+```
 sudo apt install curl
-
+```
 Install Node
-
+```
 curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
 
 source ~/.profile
 
 nvm install 16.15.0
-
+```
 Install NPM
-
+```
 sudo apt-get install npm
-
+```
 Install Yarn
-
+```
 sudo npm install -g yarn
-
+```
 Install Frappe Bench
-
+```
 sudo pip3 install frappe-bench
-
+```
 Initialize Frappe Bench
-
+```
 bench init --frappe-branch version-14 frappe-bench
-
+```
 Switch directories into the Frappe Bench directory
-
+```
 cd frappe-bench
-
+```
 Change user directory permissions
 
 This will give the bench user execution permission to the home directory.
-
+```
 chmod -R o+rx /home/[frappe-user]
-
+```
 Create a New Site
 
 A site is a requirement in ERPNext, Frappe and all the other apps we will be needing to install. We will create the site in this step.
-
+```
 bench new-site [site-name]
+```
 
-Install ERPNext and other Apps
-Download all the apps we want to install
 
 The first app we will download is the payments app. This app is required when setting up ERPNext.
 
