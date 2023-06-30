@@ -1,3 +1,10 @@
 JavaScript
 
-1. 
+1. Dynamically Fetching Select Options
+
+frappe.ui.form.on("Test", {
+    refresh: function(frm) {
+      var options = ["Open", "Closed"];
+      frm.set_df_property("check", "options", options);
+    }
+  });
