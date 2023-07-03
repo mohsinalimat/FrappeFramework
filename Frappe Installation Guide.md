@@ -140,7 +140,7 @@ sudo pip3 install frappe-bench
 ```
 bench init --frappe-branch version-14 frappe-bench
 ```
-### Switch directories into the Frappe Bench directory
+### Switch Directories into the Frappe Bench directory
 ```
 cd frappe-bench
 ```
