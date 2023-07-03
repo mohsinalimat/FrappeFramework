@@ -1,7 +1,7 @@
 # Python
 
 ### 1. By Script Naming Rule 
-~ Need to select "By Script" in Naming Rule and fill "autoname" in "Auto Name"
+- Need to select "By Script" in Naming Rule and fill "autoname" in "Auto Name"
 ```
 from frappe.model.naming import make_autoname
 
