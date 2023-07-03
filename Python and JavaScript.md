@@ -1,6 +1,7 @@
-Python and JavaScript 
+# Python and JavaScript 
 
-1. Fetching Session Data
+## 1. Fetching Session Data
+```
 rappe.ui.form.on('Student', {
     refresh: function(frm) {
         frm.add_custom_button('View Session Data', function() {
@@ -24,3 +25,4 @@ return session_data
 def get_dob():
 dob = frappe.session.data.get("date_of_birth")
 return dob
+```
