@@ -22,7 +22,7 @@ sudo apt-get update -y
 sudo apt-get upgrade -y
 ```
 
-### Create a new user – (bench user)
+### Create a New User – (Bench User)
 
 In linux, the root user processes escalated privileges to perform any tasks within the system. This is why it is not advisable to use this user on a daily basis. We will create a user that we can use, and this will be the user we will also use as the Frappe Bench User.
 ```
