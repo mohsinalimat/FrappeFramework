@@ -37,9 +37,9 @@ Install Required Packages
 A software like ERPNext, which is built on Frappe Framework, requires a number of packages in order to run smoothly. These are the packages we will be installing in this step.
 
 ## Install GIT
-
+```
 sudo apt-get install git
-
+```
 ## Install Python
 
 ERPNext version 14 requires Python version 3.10+. This is what we will install in this step.
