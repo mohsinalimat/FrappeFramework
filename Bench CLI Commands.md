@@ -24,6 +24,11 @@ bench use <site_name>
 ```
 bench --site <site_name> console
 ```
+### 7. Set Site on Develoiper Mode
+```
+bench --site <site_name> --force set-config developer_mode 1
+```
+
 # Important Terminal Commands
 
 ### A. Change Ownership of frappe-bench Directory and its Contents to Root User
