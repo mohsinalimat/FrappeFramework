@@ -166,6 +166,11 @@ bench new-app [app-name]
 ```
 bench --site [site-name] install-app [app-name]
 ```
+### Set Developer Mode 
+```
+bench --site travelmanagement --force set-config developer_mode 1
+```
+
 ### Strart Frappe Server
 You can start the server by running the below command:
 ```
