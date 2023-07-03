@@ -56,31 +56,31 @@ sudo apt-get install python3.10-venv
 Install Software Properties Common
 
 Software Properties Common will help in repository management.
-
+```
 sudo apt-get install software-properties-common
-
+```
 Install MariaDB
 
 ERPNext is built to naively run on MariaDB. The team is working to have the same working on PostgreSQL, but this is not ready yet.
-
+```
 sudo apt install mariadb-server mariadb-client
-
+```
 Install Redis Server
-
+```
 sudo apt-get install redis-server
-
+```
 Install other packages
 
 ERPNext functionality also relies on other packages we will install in this step. These will load fonts, PDFs, and other resources to our instance.
-
+```
 sudo apt-get install xvfb libfontconfig wkhtmltopdf
 sudo apt-get install libmysqlclient-dev
-
+```
 Configure MYSQL Server
 Setup the server
-
+```
 sudo mysql_secure_installation
-
+```
 When you run this command, the server will show the following prompts. Please follow the steps as shown below to complete the setup correctly.
 
     Enter current password for root: (Enter your SSH root user password)
@@ -94,9 +94,9 @@ When you run this command, the server will show the following prompts. Please fo
     Reload privilege tables now? [Y/n]: Y
 
 Edit MYSQL default config file
-
+```
 sudo nano /etc/mysql/my.cnf
-
+```
 Add the following block of code exactly as is:
 ```
 [mysqld]
@@ -111,7 +111,6 @@ Restart the MYSQL Server
 ```
 sudo service mysql restart
 ```
-Instal CURL, Node, NPM and Yarn
 Install CURL
 ```
 sudo apt install curl
@@ -144,7 +143,7 @@ Switch directories into the Frappe Bench directory
 ```
 cd frappe-bench
 ```
-Change user directory permissions
+Change User Directory Permissions
 
 This will give the bench user execution permission to the home directory.
 ```
@@ -156,28 +155,17 @@ A site is a requirement in ERPNext, Frappe and all the other apps we will be nee
 ```
 bench new-site [site-name]
 ```
+Create a New App 
 
+```
+bench new-app [app-name]
+```
 
-The first app we will download is the payments app. This app is required when setting up ERPNext.
+```
+bench --site [site-name] install-app [app-name]
+```
 
-bench get-app payments
-
-Next, we will download ERPNext app
-
-bench get-app --branch version-14 erpnext
-
-Download any other app you may be interested in in a similar manner. For instance, if you need the Human Resource app to be installed, use the following command.
-
-bench get-app hrms
-
-Install all the apps on our site
-
-bench --site [site-name] install-app erpnext
-
-Install all the other apps you downloaded in the same way. For example, if you downloaded the human resource app, use the below command to install it.
-
-bench --site [site-name] install-app hrms
-
-We have successfully setup ERPNext version 14 on ubuntu 22.04. You can start the server by running the below command:
-
+You can start the server by running the below command:
+```
 bench start
+```
