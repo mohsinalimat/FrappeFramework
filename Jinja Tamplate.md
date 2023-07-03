@@ -2,11 +2,11 @@
 
 ### 1. Fetching Data from Another DocType
 ```
-{% set value = frappe.db.get_value("[doctype]", "[name]", "[fieldname]")%}  {{value}}
+{% set value = frappe.db.get_value("[doctype]", "[name]", "[fieldname]")%} {{value}}
 ```
 ### 2. Fetching Data from Linked Field DocType
 ```
-{% set value = frappe.get_all('linked_field_doctype_name', filters = {'linked_field': doc.linked_field}, fields=['fild_name']) %}	{{value[0]['fild_name']}}
+{% set value = frappe.get_all('linked_field_doctype_name', filters = {'linked_field': doc.linked_field}, fields=['fild_name']) %} {{value[0]['fild_name']}}
 ```
 ### 3. Fetching Data from Child Table
 ```
