@@ -1,6 +1,6 @@
 # Python and JavaScript 
 
-## 1. Fetching Session Data
+### 1. Fetching Session Data
 ```
 rappe.ui.form.on('Student', {
     refresh: function(frm) {
@@ -25,4 +25,47 @@ return session_data
 def get_dob():
 dob = frappe.session.data.get("date_of_birth")
 return dob
+```
+
+### 2.Fetching Values from One DocType to Another
+```
+frappe.ui.form.on('Av production form', {
+	ifsc_code: function(frm) {
+    	frappe.call({
+			method: "frappe.production_houses.doctype.av_production_form.api.get_bank",
+			args: {
+				doctype:"Bank Details IFSC av",
+				name:frm.doc.ifsc_code,
+			},
+			
+			callback: (r) => {
+				if(r.message) {
+					frm.set_value('micr',r.message.micr)
+					frm.set_value('branch_address',r.message.branch_address)
+					frm.set_value('bank_name', r.message.bank_name)
+					frm.set_value('branch',r.message.branch)
+					
+				}
+			}
+		});
+		
+    },
+    
+});
+
+@frappe.whitelist()
+def get_bank(doctype, name=None ,filters=None, parent=None):
+        
+		if frappe.is_table(doctype):
+			check_parent_permission(parent, doctype)
+				
+		if filters and not name:
+			name = frappe.db.get_value(doctype, json.loads(filters))
+			if not name:
+				frappe.throw(_("No document found for given filters"))
+
+		doc = frappe.get_doc(doctype, name)
+		if not doc.has_permission("read"):
+			raise frappe.PermissionError
+		return frappe.get_doc(doctype, name).as_dict()
 ```
