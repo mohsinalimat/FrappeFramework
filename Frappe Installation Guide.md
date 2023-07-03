@@ -166,7 +166,7 @@ bench new-app [app-name]
 ```
 bench --site [site-name] install-app [app-name]
 ```
-### Set Developer Mode 
+### Set Site Developer Mode 
 ```
 bench --site travelmanagement --force set-config developer_mode 1
 ```
