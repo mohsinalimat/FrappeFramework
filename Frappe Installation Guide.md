@@ -17,9 +17,10 @@ The below prerequisites are advised in order to get an optimal functionality of 
 
 ## Server Settings
 ### Update and Upgrade Packages
-
+```
 sudo apt-get update -y
 sudo apt-get upgrade -y
+```
 
 ### Create a new user – (bench user)
 
