@@ -4,7 +4,7 @@
 ```
 bench new-app <app_name>
 ```
-### 2. Set App on Developer Mode
+### 2. Set Site on Developer Mode
 ```
 bench --site <site-name> set-config developer_mode 1
 ```
@@ -23,10 +23,6 @@ bench use <site_name>
 ### 6. Open a Python Console for the Specific Site
 ```
 bench --site <site_name> console
-```
-### 7. Set Site on Develoiper Mode
-```
-bench --site <site_name> --force set-config developer_mode 1
 ```
 
 # Important Terminal Commands
