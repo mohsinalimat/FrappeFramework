@@ -33,6 +33,6 @@ sudo chown -R <root_user_name> frappe-bench
 ```
 ### B. Using Mariadb CLI
 ```
-source env/bin/activate
-bench mariadb
+mysql -u root -p
 ```
+
